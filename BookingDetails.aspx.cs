@@ -39,6 +39,7 @@ namespace State_Management_Tasks
                     counter++;
                 }
             }
+            lbl_Details.Text = Details;
         }
     }
 }
