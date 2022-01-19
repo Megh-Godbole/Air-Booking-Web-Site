@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterBooking.master.cs" Inherits="State_Management_Tasks.MasterBooking" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .ForTable {
+            width: 100%;
+            height: 500px;
+        }
+        .Fortd {
+            text-align: center;
+            vertical-align: top;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <table class="ForTable">
+                <tr>
+                    <td class="Fortd">
+                        <asp:ContentPlaceHolder ID="cph1" runat="server"></asp:ContentPlaceHolder>
+                    </td>
+                    <td class="Fortd">
+                        <br />
+                        <asp:Label ID="lbl_Name" runat="server" Text=""></asp:Label><br />
+                        <asp:Label ID="lbl_Country" runat="server" Text=""></asp:Label>
+                        <br /><br />
+                        IND To USA Flight Details<br />
+                        ABC Flight on <asp:Label ID="lbl_DateIndToUsa" runat="server" Text=""></asp:Label><br />
+                        Seats Available : <asp:Label ID="lbl_SeatsIndToUsa" runat="server" Text=""></asp:Label>
+                        <br /><br />
+                        USA To IND Flight Details<br />
+                        XYZ Flight on <asp:Label ID="lbl_DateUsaToInd" runat="server" Text=""></asp:Label><br />
+                        Seats Available : <asp:Label ID="lbl_SeatsUsaToInd" runat="server" Text=""></asp:Label>
+                        <br /><br />
+                        <asp:Button ID="btn_Booking" runat="server" Text="Get Booking Details" PostBackUrl="~/BookingDetails.aspx" />
+                
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>
