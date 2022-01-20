@@ -33,8 +33,8 @@ namespace State_Management_Tasks
                 lbl_Country.Text = Agent2.Country;
                 lblCountrys1.Text = "USA To IND";
                 lblCountrys2.Text = "IND To USA";
-                lbl_Date1.Text = Agent2.FlightDateFromIndToUsa = DateTime.Now.AddDays(02).ToShortDateString();
-                lbl_Date2.Text = Agent2.FlightDateFromUsaToInd = DateTime.Now.AddDays(03).ToShortDateString();
+                lbl_Date1.Text = Agent2.FlightDateFromUsaToInd = DateTime.Now.AddDays(02).ToShortDateString();
+                lbl_Date2.Text = Agent2.FlightDateFromIndToUsa = DateTime.Now.AddDays(03).ToShortDateString();
                 lbl_Seats1.Text = Variables.AvailableSeatsUsaToInd1.ToString();
                 lbl_Seats2.Text = Variables.AvailableSeatsIndToUsa2.ToString();
 
