@@ -41,17 +41,5 @@ namespace State_Management_Tasks
                 }
             }
         }
-
-        protected void btnConfirmBooking_Click(object sender, EventArgs e)
-        {
-            if (Session["User"].ToString() == "Agent1")
-            {
-
-            }
-            else if (Session["User"].ToString() == "Agent2")
-            {
-
-            }
-        }
     }
 }
