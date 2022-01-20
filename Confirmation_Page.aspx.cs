@@ -14,7 +14,7 @@ namespace State_Management_Tasks
             string TravellerUniqueID = null;
             if (Session["User"].ToString() == "Agent1")
             {
-                TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.Counter];
+                TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.A1Counter];
                 lblTravellerDetails.Text +=
                     "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
                     "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
@@ -23,19 +23,19 @@ namespace State_Management_Tasks
 
                 if (Variables.isRoundTrip)
                 {
-                    TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.Counter + 1];
+                    TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.A1Counter + 1];
                     lblTravellerDetails.Text +=
                         "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
                         "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
                         "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
                         "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
-                    Variables.Counter++;
+                    Variables.A1Counter++;
                 }
-                Variables.Counter++;
+                Variables.A1Counter++;
             }
             else if (Session["User"].ToString() == "Agent2")
             {
-                TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.Counter];
+                TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.A2Counter];
                 lblTravellerDetails.Text +=
                     "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
                     "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
@@ -44,15 +44,15 @@ namespace State_Management_Tasks
 
                 if (Variables.isRoundTrip)
                 {
-                    TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.Counter + 1];
+                    TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.A2Counter + 1];
                     lblTravellerDetails.Text +=
                         "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
                         "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
                         "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
                         "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
-                    Variables.Counter++;
+                    Variables.A2Counter++;
                 }
-                Variables.Counter++;
+                Variables.A2Counter++;
             }
         }
     }

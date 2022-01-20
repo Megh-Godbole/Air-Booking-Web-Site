@@ -60,40 +60,58 @@ namespace State_Management_Tasks
         protected global::System.Web.UI.WebControls.Label lbl_Country;
 
         /// <summary>
-        /// lbl_DateIndToUsa control.
+        /// lblCountrys1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_DateIndToUsa;
+        protected global::System.Web.UI.WebControls.Label lblCountrys1;
 
         /// <summary>
-        /// lbl_SeatsIndToUsa control.
+        /// lbl_Date1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_SeatsIndToUsa;
+        protected global::System.Web.UI.WebControls.Label lbl_Date1;
 
         /// <summary>
-        /// lbl_DateUsaToInd control.
+        /// lbl_Seats1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_DateUsaToInd;
+        protected global::System.Web.UI.WebControls.Label lbl_Seats1;
 
         /// <summary>
-        /// lbl_SeatsUsaToInd control.
+        /// lblCountrys2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_SeatsUsaToInd;
+        protected global::System.Web.UI.WebControls.Label lblCountrys2;
+
+        /// <summary>
+        /// lbl_Date2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Date2;
+
+        /// <summary>
+        /// lbl_Seats2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Seats2;
 
         /// <summary>
         /// btn_Booking control.
@@ -103,5 +121,14 @@ namespace State_Management_Tasks
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Booking;
+
+        /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogout;
     }
 }

@@ -16,27 +16,38 @@ namespace State_Management_Tasks
             bool isFromUSA = false;
             if (Session["User"].ToString() == "Agent1")
             {
-                isFromInd = (Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["From"] == "IND");
-                isFromUSA = (Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["From"] == "USA");
+                isFromInd = (Request.Cookies[Agent1.TravellerUniqueIds[Variables.A1Counter]]["From"] == "IND");
+                isFromUSA = (Request.Cookies[Agent1.TravellerUniqueIds[Variables.A1Counter]]["From"] == "USA");
                 if (Variables.isRoundTrip)
                 {
-                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa--; }
-                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
+                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa1--; }
+                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd1--; }
                 }
             }
             else if (Session["User"].ToString() == "Agent2")
             {
-                isFromInd = (Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["From"] == "IND");
-                isFromUSA = (Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["From"] == "USA");
+                isFromInd = (Request.Cookies[Agent2.TravellerUniqueIds[Variables.A2Counter]]["From"] == "IND");
+                isFromUSA = (Request.Cookies[Agent2.TravellerUniqueIds[Variables.A2Counter]]["From"] == "USA");
                 if (Variables.isRoundTrip)
                 {
-                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa--; }
-                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
+                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa2--; }
+                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd1--; }
                 }
             }
-            if (isFromInd) { Variables.AvailableSeatsIndToUsa--; }
-            else if (isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
+            if (isFromInd) { Variables.AvailableSeatsIndToUsa2--; }
+            else if (isFromUSA) { Variables.AvailableSeatsUsaToInd1--; }
         }
 
+        protected void btnConfirmBooking_Click(object sender, EventArgs e)
+        {
+            if (Session["User"].ToString() == "Agent1")
+            {
+
+            }
+            else if (Session["User"].ToString() == "Agent2")
+            {
+
+            }
+        }
     }
 }

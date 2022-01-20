@@ -5,7 +5,7 @@
     <br />
     Booking Confirmed<br />
     <br />
-    <asp:Button ID="btnConfirmBooking" runat="server" PostBackUrl="~/Confirmation_Page.aspx" Text="View Booking Details" />
+    <asp:Button ID="btnConfirmBooking" runat="server" PostBackUrl="~/Confirmation_Page.aspx" Text="View Booking Details" OnClick="btnConfirmBooking_Click" />
     <br />
     <br />
     <asp:Button ID="btnBack" runat="server" PostBackUrl="~/Default.aspx" Text="Back" />
