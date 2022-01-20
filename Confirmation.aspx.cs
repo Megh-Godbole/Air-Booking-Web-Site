@@ -20,9 +20,9 @@ namespace State_Management_Tasks
                 isFromUSA = (Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["From"] == "USA");
                 if (Variables.isRoundTrip)
                 {
-                    Variables.AvailableSeatsIndToUsa--;
-                    Variables.AvailableSeatsUsaToInd--;
-                } 
+                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa--; }
+                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
+                }
             }
             else if (Session["User"].ToString() == "Agent2")
             {
@@ -30,13 +30,12 @@ namespace State_Management_Tasks
                 isFromUSA = (Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["From"] == "USA");
                 if (Variables.isRoundTrip)
                 {
-                    Variables.AvailableSeatsIndToUsa--;
-                    Variables.AvailableSeatsUsaToInd--;
+                    if (!isFromInd) { Variables.AvailableSeatsIndToUsa--; }
+                    else if (!isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
                 }
             }
-
             if (isFromInd) { Variables.AvailableSeatsIndToUsa--; }
-            else if (isFromUSA) { Variables.AvailableSeatsUsaToInd--; }     
+            else if (isFromUSA) { Variables.AvailableSeatsUsaToInd--; }
         }
 
     }

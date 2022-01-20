@@ -11,34 +11,45 @@ namespace State_Management_Tasks
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string TravellerUniqueID = null;
             if (Session["User"].ToString() == "Agent1")
             {
-                lblName.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["Name"];
-                lblAge.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["Age"];
-                lblFrom.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["From"];
-                lblTo.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter]]["To"];
+                TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.Counter];
+                lblTravellerDetails.Text +=
+                    "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
+                    "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
+                    "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
+                    "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
+
                 if (Variables.isRoundTrip)
                 {
-                    lblName.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter + 1]]["Name"];
-                    lblAge.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter + 1]]["Age"];
-                    lblFrom.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter + 1]]["From"];
-                    lblTo.Text = Request.Cookies[Agent1.TravellerUniqueIds[Variables.Counter + 1]]["To"];
+                    TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.Counter + 1];
+                    lblTravellerDetails.Text +=
+                        "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
+                        "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
+                        "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
+                        "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
                     Variables.Counter++;
                 }
                 Variables.Counter++;
             }
             else if (Session["User"].ToString() == "Agent2")
             {
-                lblName.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["Name"];
-                lblAge.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["Age"];
-                lblFrom.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["From"];
-                lblTo.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter]]["To"];
+                TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.Counter];
+                lblTravellerDetails.Text +=
+                    "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
+                    "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
+                    "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
+                    "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
+
                 if (Variables.isRoundTrip)
                 {
-                    lblName.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter + 1]]["Name"];
-                    lblAge.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter + 1]]["Age"];
-                    lblFrom.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter + 1]]["From"];
-                    lblTo.Text = Request.Cookies[Agent2.TravellerUniqueIds[Variables.Counter + 1]]["To"];
+                    TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.Counter + 1];
+                    lblTravellerDetails.Text +=
+                        "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
+                        "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
+                        "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
+                        "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
                     Variables.Counter++;
                 }
                 Variables.Counter++;

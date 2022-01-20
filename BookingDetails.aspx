@@ -16,6 +16,9 @@
         <div class="auto-style1">
             <br />
             <asp:Label ID="lbl_Details" runat="server" Text=""></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnBack" runat="server" PostBackUrl="~/Default.aspx" Text="Back" />
         </div>
     </form>
 </body>

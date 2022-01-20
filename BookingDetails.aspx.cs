@@ -22,7 +22,7 @@ namespace State_Management_Tasks
                                 "Age : " + Request.Cookies[TravellerId]["Age"] + "<br>" +
                                 "From : " + Request.Cookies[TravellerId]["From"] + "<br>" +
                                 "To : " + Request.Cookies[TravellerId]["To"] + "<br>" +
-                                "Travelling Date : " + "Work In Progress" + "<br><br>";
+                                "Travelling Date : " + Request.Cookies[TravellerId]["Date"] + "<br><br>";
                     counter++;
                 }
             }
@@ -35,7 +35,7 @@ namespace State_Management_Tasks
                                 "Age : " + Request.Cookies[TravellerId]["Age"] + "<br>" +
                                 "From : " + Request.Cookies[TravellerId]["From"] + "<br>" +
                                 "To : " + Request.Cookies[TravellerId]["To"] + "<br>" +
-                                "Travelling Date : " + "Work In Progress" + "<br><br>";
+                                "Travelling Date : " + Request.Cookies[TravellerId]["Date"] + "<br><br>";
                     counter++;
                 }
             }
