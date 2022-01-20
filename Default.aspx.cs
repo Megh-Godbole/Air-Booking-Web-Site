@@ -9,15 +9,25 @@ namespace State_Management_Tasks
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        public bool isAgent1 = false;
+        public bool isAgent2 = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            isAgent1 = (Session["User"].ToString() == "Agent1");
+            isAgent2 = (Session["User"].ToString() == "Agent2");
+            if (isAgent1)
+            {
+                ddl_FromCountrys.Items.Remove("USA");
+                ddl_ToCountrys.Items.Remove("IND");
+            }
+            else if (isAgent2)
+            {
+                ddl_FromCountrys.Items.Remove("IND");
+                ddl_ToCountrys.Items.Remove("USA");
+            }
         }
         protected void btn_TravellerBook_Click(object sender, EventArgs e)
         {
-            bool isAgent1 = (Session["User"].ToString() == "Agent1");
-            bool isAgent2 = (Session["User"].ToString() == "Agent2");
-
             if (isAgent1)
             {
                 Variables.UniqueId++;
@@ -43,6 +53,8 @@ namespace State_Management_Tasks
             }
             else if (isAgent2)
             {
+                ddl_FromCountrys.Items[0].Attributes["disabled"] = "disabled";
+                ddl_ToCountrys.Items[1].Attributes["disabled"] = "disabled";
                 Variables.UniqueId++;
                 Agent2.TravellerUniqueIds.Add("A2"+Variables.UniqueId.ToString());
                 HttpCookie cookie = new HttpCookie(Agent2.TravellerUniqueIds[Variables.A2Counter]);
