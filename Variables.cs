@@ -18,5 +18,7 @@ namespace State_Management_Tasks
         public static int A2Counter = 0;
 
         public static bool isRoundTrip = false;
+
+        public static int UniqueId = 1000;
     }
 }

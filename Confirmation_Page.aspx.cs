@@ -23,13 +23,9 @@ namespace State_Management_Tasks
 
                 if (Variables.isRoundTrip)
                 {
-                    TravellerUniqueID = Agent1.TravellerUniqueIds[Variables.A1Counter + 1];
-                    lblTravellerDetails.Text +=
-                        "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
-                        "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
-                        "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
-                        "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
-                    Variables.A1Counter++;
+                    lblTravellerDetails.Text += "For Round Trip<br>" +
+                        "From : " + Request.Cookies[TravellerUniqueID]["RT_From"] + "<br>" +
+                        "To : " + Request.Cookies[TravellerUniqueID]["RT_To"] + "<br>";
                 }
                 Variables.A1Counter++;
             }
@@ -44,13 +40,9 @@ namespace State_Management_Tasks
 
                 if (Variables.isRoundTrip)
                 {
-                    TravellerUniqueID = Agent2.TravellerUniqueIds[Variables.A2Counter + 1];
-                    lblTravellerDetails.Text +=
-                        "Name : " + Request.Cookies[TravellerUniqueID]["Name"] + "<br>" +
-                        "Age : " + Request.Cookies[TravellerUniqueID]["Age"] + "<br>" +
-                        "From : " + Request.Cookies[TravellerUniqueID]["From"] + "<br>" +
-                        "To : " + Request.Cookies[TravellerUniqueID]["To"] + "<br>";
-                    Variables.A2Counter++;
+                    lblTravellerDetails.Text += "For Round Trip<br>" +
+                        "From : " + Request.Cookies[TravellerUniqueID]["RT_From"] + "<br>" +
+                        "To : " + Request.Cookies[TravellerUniqueID]["RT_To"] + "<br>";
                 }
                 Variables.A2Counter++;
             }

@@ -20,7 +20,8 @@ namespace State_Management_Tasks
 
             if (isAgent1)
             {
-                Agent1.TravellerUniqueIds.Add("A1"+GenrateUniqueId.UniqueId.ToString());
+                Variables.UniqueId++;
+                Agent1.TravellerUniqueIds.Add("A1"+Variables.UniqueId.ToString());
                 HttpCookie cookie = new HttpCookie(Agent1.TravellerUniqueIds[Variables.A1Counter]);
                 cookie["Name"] = tb_TravellerName.Text;
                 cookie["Age"] = tb_TravellerAge.Text;
@@ -29,24 +30,21 @@ namespace State_Management_Tasks
                 if (ddl_FromCountrys.Text == "IND") { cookie["Date"] = Agent1.FlightDateFromIndToUsa; }
                 else if (ddl_FromCountrys.Text == "USA") { cookie["Date"] = Agent1.FlightDateFromUsaToInd; }
                 cookie.Expires = DateTime.Now.AddDays(2);
-                Response.Cookies.Add(cookie);
                 if (cb_IsRoundTrip.Checked)
                 {
-                    Agent1.TravellerUniqueIds.Add("A1"+GenrateUniqueId.UniqueId.ToString());
-                    HttpCookie cookie1 = new HttpCookie(Agent1.TravellerUniqueIds[Variables.A1Counter + 1]);
-                    cookie1["Name"] = tb_TravellerName.Text;
-                    cookie1["Age"] = tb_TravellerAge.Text;
-                    cookie1["From"] = ddl_ToCountrys.SelectedValue;
-                    cookie1["To"] = ddl_FromCountrys.SelectedValue;
-                    if (ddl_FromCountrys.Text == "IND") { cookie["Date"] = Agent1.FlightDateFromUsaToInd; }
-                    else if (ddl_FromCountrys.Text == "USA") { cookie["Date"] = Agent1.FlightDateFromIndToUsa; }
-                    cookie1.Expires = DateTime.Now.AddDays(3);
-                    Response.Cookies.Add(cookie1);
+                    cookie["isRoundTrip"] = cb_IsRoundTrip.Checked.ToString();
+                    cookie["RT_From"] = ddl_ToCountrys.SelectedValue;
+                    cookie["RT_To"] = ddl_FromCountrys.SelectedValue;
+                    if (ddl_FromCountrys.Text == "IND") { cookie["RT_Date"] = Agent1.FlightDateFromUsaToInd; }
+                    else if (ddl_FromCountrys.Text == "USA") { cookie["RT_Date"] = Agent1.FlightDateFromIndToUsa; }
+                    cookie.Expires = DateTime.Now.AddDays(3);
                 }
+                Response.Cookies.Add(cookie);
             }
             else if (isAgent2)
             {
-                Agent2.TravellerUniqueIds.Add("A2"+GenrateUniqueId.UniqueId.ToString());
+                Variables.UniqueId++;
+                Agent2.TravellerUniqueIds.Add("A2"+Variables.UniqueId.ToString());
                 HttpCookie cookie = new HttpCookie(Agent2.TravellerUniqueIds[Variables.A2Counter]);
                 cookie["Name"] = tb_TravellerName.Text;
                 cookie["Age"] = tb_TravellerAge.Text;
@@ -55,21 +53,16 @@ namespace State_Management_Tasks
                 if (ddl_FromCountrys.Text == "IND") { cookie["Date"] = Agent2.FlightDateFromIndToUsa; }
                 else if (ddl_FromCountrys.Text == "USA") { cookie["Date"] = Agent2.FlightDateFromUsaToInd; }
                 cookie.Expires = DateTime.Now.AddDays(2);
-                Response.Cookies.Add(cookie);
-
                 if (cb_IsRoundTrip.Checked)
                 {
-                    Agent2.TravellerUniqueIds.Add("A2"+GenrateUniqueId.UniqueId.ToString());
-                    HttpCookie cookie1 = new HttpCookie(Agent2.TravellerUniqueIds[Variables.A2Counter + 1]);
-                    cookie1["Name"] = tb_TravellerName.Text;
-                    cookie1["Age"] = tb_TravellerAge.Text;
-                    cookie1["From"] = ddl_ToCountrys.SelectedValue;
-                    cookie1["To"] = ddl_FromCountrys.SelectedValue;
-                    if (ddl_FromCountrys.Text == "IND") { cookie["Date"] = Agent2.FlightDateFromUsaToInd; }
-                    else if (ddl_FromCountrys.Text == "USA") { cookie["Date"] = Agent2.FlightDateFromIndToUsa; }
-                    cookie1.Expires = DateTime.Now.AddDays(3);
-                    Response.Cookies.Add(cookie1);
+                    cookie["isRoundTrip"] = cb_IsRoundTrip.Checked.ToString();
+                    cookie["RT_From"] = ddl_ToCountrys.SelectedValue;
+                    cookie["RT_To"] = ddl_FromCountrys.SelectedValue;
+                    if (ddl_FromCountrys.Text == "IND") { cookie["RT_Date"] = Agent2.FlightDateFromUsaToInd; }
+                    else if (ddl_FromCountrys.Text == "USA") { cookie["RT_Date"] = Agent2.FlightDateFromIndToUsa; }
+                    cookie.Expires = DateTime.Now.AddDays(3);
                 }
+                Response.Cookies.Add(cookie);
             }
             Response.Redirect("~/Confirmation.aspx?isRoundTrip=" + cb_IsRoundTrip.Checked);
         }

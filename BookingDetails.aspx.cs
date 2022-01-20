@@ -23,6 +23,13 @@ namespace State_Management_Tasks
                                 "From : " + Request.Cookies[TravellerId]["From"] + "<br>" +
                                 "To : " + Request.Cookies[TravellerId]["To"] + "<br>" +
                                 "Travelling Date : " + Request.Cookies[TravellerId]["Date"] + "<br><br>";
+                    if (Request.Cookies[TravellerId]["isRoundTrip"]=="True")
+                    {
+                        Details += "For Round Trip<br>" +
+                                "From : " + Request.Cookies[TravellerId]["RT_From"] + "<br>" +
+                                "To : " + Request.Cookies[TravellerId]["RT_To"] + "<br>" +
+                                "Travelling Date : " + Request.Cookies[TravellerId]["RT_Date"] + "<br><br>";
+                    }
                     counter++;
                 }
             }
@@ -36,6 +43,13 @@ namespace State_Management_Tasks
                                 "From : " + Request.Cookies[TravellerId]["From"] + "<br>" +
                                 "To : " + Request.Cookies[TravellerId]["To"] + "<br>" +
                                 "Travelling Date : " + Request.Cookies[TravellerId]["Date"] + "<br><br>";
+                    if (Request.Cookies[TravellerId]["isRoundTrip"] == "True")
+                    {
+                        Details += "For Round Trip<br>" +
+                                "From : " + Request.Cookies[TravellerId]["RT_From"] + "<br>" +
+                                "To : " + Request.Cookies[TravellerId]["RT_To"] + "<br>" +
+                                "Travelling Date : " + Request.Cookies[TravellerId]["RT_Date"] + "<br><br>";
+                    }
                     counter++;
                 }
             }

@@ -91,7 +91,6 @@
     <Compile Include="Confirmation_Page.aspx.designer.cs">
       <DependentUpon>Confirmation_Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GenrateUniqueId.cs" />
     <Compile Include="Login_Page.aspx.cs">
       <DependentUpon>Login_Page.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
