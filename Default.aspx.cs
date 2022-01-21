@@ -53,8 +53,6 @@ namespace State_Management_Tasks
             }
             else if (isAgent2)
             {
-                ddl_FromCountrys.Items[0].Attributes["disabled"] = "disabled";
-                ddl_ToCountrys.Items[1].Attributes["disabled"] = "disabled";
                 Variables.UniqueId++;
                 Agent2.TravellerUniqueIds.Add("A2"+Variables.UniqueId.ToString());
                 HttpCookie cookie = new HttpCookie(Agent2.TravellerUniqueIds[Variables.A2Counter]);
